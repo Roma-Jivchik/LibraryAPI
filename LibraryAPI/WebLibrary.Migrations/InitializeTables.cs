@@ -3,7 +3,7 @@
 namespace WebLibrary.Migrations
 {
     [Migration(2023082100)]
-    internal class InitializeTables : AutoReversingMigration
+    public class InitializeTables : AutoReversingMigration
     {
         public override void Up()
         {
