@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebLibrary.DAL", "WebLibrar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebLibrary.Domain", "WebLibrary.Domain\WebLibrary.Domain.csproj", "{B84FF0A8-7E12-411D-BA6C-B591CCEA31A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebLibrary.Migrations", "WebLibrary.Migrations\WebLibrary.Migrations.csproj", "{99195CA9-639F-4FC1-B6BD-6A35D02840BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B84FF0A8-7E12-411D-BA6C-B591CCEA31A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B84FF0A8-7E12-411D-BA6C-B591CCEA31A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B84FF0A8-7E12-411D-BA6C-B591CCEA31A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99195CA9-639F-4FC1-B6BD-6A35D02840BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99195CA9-639F-4FC1-B6BD-6A35D02840BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99195CA9-639F-4FC1-B6BD-6A35D02840BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99195CA9-639F-4FC1-B6BD-6A35D02840BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
