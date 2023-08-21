@@ -16,6 +16,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\WebLibrary.Domain\WebLibrary.Domain.csproj" />
+		<ProjectReference Include="..\WebLibrary.Migrations\WebLibrary.Migrations.csproj" />
 	</ItemGroup>
 
 </Project>
