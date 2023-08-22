@@ -3,7 +3,7 @@ using WebLibrary.Domain.Entities;
 
 namespace WebLibrary.DAL
 {
-    public interface IBaseRepository<TEntity> where TEntity : Entity
+    public interface IBaseRepository<TEntity> where TEntity : BaseEntity
     {
         Task<List<TEntity>> GetAsync(
             Expression<Func<TEntity, bool>>? filter = null,

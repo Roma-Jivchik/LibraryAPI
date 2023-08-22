@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace WebLibrary.DAL
 {
     internal abstract class BaseRepository<TEntity> : IBaseRepository<TEntity>
-        where TEntity : Entity
+        where TEntity : BaseEntity
     {
         protected readonly LibraryDBContext context;
         protected readonly DbSet<TEntity> DbSet;
