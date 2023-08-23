@@ -1,4 +1,4 @@
-﻿namespace WebLibrary.Domain.Requests.IdentityRequestss;
+﻿namespace WebLibrary.Domain.Requests.IdentityRequests;
 
 public class LoginRequest
 {
