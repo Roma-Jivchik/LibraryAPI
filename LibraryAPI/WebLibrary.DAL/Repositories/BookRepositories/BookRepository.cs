@@ -11,7 +11,7 @@ namespace WebLibrary.DAL.Repositories.BookRepositories
 
         }
 
-        public Task<Book?> GetBookByIsbn(string isbn)
+        public Task<Book?> GetBookByIsbnAsync(string isbn)
         {
             return DbSet.AsNoTracking().FirstOrDefaultAsync(_ => _.Isbn == isbn);
         }

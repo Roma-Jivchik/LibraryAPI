@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebLibrary.API", "WebLibrary.API\WebLibrary.API.csproj", "{2652393E-C0F9-4ADF-89EE-503688914F08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebLibrary.API", "WebLibrary.API\WebLibrary.API.csproj", "{2652393E-C0F9-4ADF-89EE-503688914F08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebLibrary.DAL", "WebLibrary.DAL\WebLibrary.DAL.csproj", "{6EEB22BD-0989-4150-93C8-8B9A06818F71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebLibrary.DAL", "WebLibrary.DAL\WebLibrary.DAL.csproj", "{6EEB22BD-0989-4150-93C8-8B9A06818F71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebLibrary.Domain", "WebLibrary.Domain\WebLibrary.Domain.csproj", "{B84FF0A8-7E12-411D-BA6C-B591CCEA31A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebLibrary.Domain", "WebLibrary.Domain\WebLibrary.Domain.csproj", "{B84FF0A8-7E12-411D-BA6C-B591CCEA31A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebLibrary.Migrations", "WebLibrary.Migrations\WebLibrary.Migrations.csproj", "{99195CA9-639F-4FC1-B6BD-6A35D02840BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebLibrary.Migrations", "WebLibrary.Migrations\WebLibrary.Migrations.csproj", "{99195CA9-639F-4FC1-B6BD-6A35D02840BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebLibrary.BLL", "WebLibrary.BLL\WebLibrary.BLL.csproj", "{DCAAD498-ED1C-4877-98B8-3A408128594F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{99195CA9-639F-4FC1-B6BD-6A35D02840BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99195CA9-639F-4FC1-B6BD-6A35D02840BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99195CA9-639F-4FC1-B6BD-6A35D02840BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCAAD498-ED1C-4877-98B8-3A408128594F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCAAD498-ED1C-4877-98B8-3A408128594F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCAAD498-ED1C-4877-98B8-3A408128594F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCAAD498-ED1C-4877-98B8-3A408128594F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-﻿namespace WebLibrary.Domain.Requests.IdentityRequest;
+﻿namespace WebLibrary.Domain.Requests.IdentityRequests;
 
 public class RegisterRequest
 {

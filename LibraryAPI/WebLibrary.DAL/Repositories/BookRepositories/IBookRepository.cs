@@ -4,6 +4,6 @@ namespace WebLibrary.DAL.Repositories.BookRepositories
 {
     public interface IBookRepository : IBaseRepository<Book>
     {
-        Task<Book?> GetBookByIsbn(string isbn);
+        Task<Book?> GetBookByIsbnAsync(string isbn);
     }
 }
