@@ -58,7 +58,7 @@ namespace WebLibrary.BLL.Services.BookServices
             return mappedBook;
         }
 
-        public async Task<BookDto?> GetBookByIsbn(string isbn)
+        public async Task<BookDto?> GetBookByIsbnAsync(string isbn)
         {
             var bookEntity = await _bookRepository.GetBookByIsbnAsync(isbn);
 

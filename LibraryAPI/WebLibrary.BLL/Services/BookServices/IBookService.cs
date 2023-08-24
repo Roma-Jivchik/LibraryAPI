@@ -10,7 +10,7 @@ namespace WebLibrary.BLL.Services.BookServices
 
         Task<BookDto?> GetBookAsync(Guid id);
 
-        Task<BookDto?> GetBookByIsbn(string isbn);
+        Task<BookDto?> GetBookByIsbnAsync(string isbn);
 
         Task<BookDto?> CreateAsync(CreateBookRequest createBookRequest);
 
