@@ -1,10 +1,10 @@
 ﻿namespace WebLibrary.BLL.Exceptions
 {
-    internal class ValidationException : Exception
+    public class ValidationExceptionResult : Exception
     {
         public string ExceptionMessage { get; set; }
 
-        public ValidationException(string message) : base(message)
+        public ValidationExceptionResult(string message) : base(message)
         {
             ExceptionMessage = message;
         }

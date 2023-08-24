@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WebLibrary.Domain\WebLibrary.Domain.csproj" />
+	  <ProjectReference Include="..\WebLibrary.BLL\WebLibrary.BLL.csproj" />
   </ItemGroup>
 
 </Project>

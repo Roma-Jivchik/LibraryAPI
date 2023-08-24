@@ -25,7 +25,7 @@ namespace WebLibrary.BLL.Services.BookServices
 
             if(existingBook is not null)
             {
-                throw new ValidationException(CreateBookRequestExceptionMessages.BookWithThisIsbnAlreadyExists);
+                throw new ValidationExceptionResult(CreateBookRequestExceptionMessages.BookWithThisIsbnAlreadyExists);
             }
 
             var bookEntity = createBookRequest.Adapt<Book>();
