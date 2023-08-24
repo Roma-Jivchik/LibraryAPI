@@ -16,9 +16,9 @@ namespace WebLibrary.BLL.Services.IdentityServices
     internal class IdentityService : IIdentityService
     {
         private readonly IUserRepository _userRepository;
-        private readonly AuthorizationSettings _authorizationSettings;
+        private readonly AuthenticationSettings _authorizationSettings;
 
-        public IdentityService(IUserRepository userRepository, AuthorizationSettings authorizationSettings)
+        public IdentityService(IUserRepository userRepository, AuthenticationSettings authorizationSettings)
         {
             _userRepository = userRepository;
             _authorizationSettings = authorizationSettings;
