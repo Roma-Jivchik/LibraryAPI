@@ -52,7 +52,7 @@ namespace WebLibrary.BLL.Extensions
 
         public static bool IsHashVerified(string password, string hashedPassword)
         {
-            if(IsHashSupported(hashedPassword)!)
+            if(!IsHashSupported(hashedPassword))
             {
                 throw new NotSupportedException(HashExceptionMessages.HashIsNotSupported);
             }
