@@ -6,9 +6,9 @@ namespace WebLibrary.API.Configurations
     {
         public static IServiceCollection AddSwagger(this IServiceCollection services)
         {
-            services.AddSwaggerGen(c =>
+            services.AddSwaggerGen(x =>
             {
-                c.SwaggerDoc("LibraryAPI v1.0", new OpenApiInfo { Title = "LibraryAPI", Version = "v1.0." });
+                x.SwaggerDoc("v1", new OpenApiInfo { Title = "Library API", Version = "v1" });
 
                 var securityScheme = new OpenApiSecurityScheme
                 {
@@ -17,12 +17,12 @@ namespace WebLibrary.API.Configurations
                     Scheme = "Bearer",
                     BearerFormat = "JWT",
                     In = ParameterLocation.Header,
-                    Description = "JSON Web Token based security"
+                    Description = "JSON Web Token based security",
                 };
 
-                var securityRequirement = new OpenApiSecurityRequirement
+                var securityReq = new OpenApiSecurityRequirement
+            {
                 {
-                    {
                     new OpenApiSecurityScheme
                     {
                         Reference = new OpenApiReference
@@ -31,12 +31,12 @@ namespace WebLibrary.API.Configurations
                             Id = "Bearer"
                         }
                     },
-                    Array.Empty<string>()
-                    }
-                };
+                    new string[] { }
+                }
+            };
 
-                c.AddSecurityDefinition("Bearer", securityScheme);
-                c.AddSecurityRequirement(securityRequirement);
+                x.AddSecurityDefinition("Bearer", securityScheme);
+                x.AddSecurityRequirement(securityReq);
             });
 
             return services;

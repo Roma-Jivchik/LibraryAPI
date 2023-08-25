@@ -3,14 +3,14 @@ using WebLibrary.Domain.Entities;
 
 namespace WebLibrary.Migrations
 {
-    [Migration(2023082100)]
-    internal class FillingTables : Migration
+    [Migration(202308210001)]
+    public class FillingTables : Migration
     {
         private readonly List<Book> books = new()
         {
             new Book
             {
-                Id = new Guid(),
+                Id = new Guid("f78b3be6-18f7-4d26-ac1c-d99a53483d8d"),
                 Isbn = "13641874111",
                 Title = "Harry Potter and the Goblet of Fire",
                 Genre = "Fantasy",
@@ -21,7 +21,7 @@ namespace WebLibrary.Migrations
             },
             new Book
             {
-                Id = new Guid(),
+                Id = new Guid("e97a8f37-4828-4e6d-a598-30b0e5ae701a"),
                 Isbn = "15109173709",
                 Title = "CLR VIA C#",
                 Genre = "Information Techology",
@@ -42,16 +42,6 @@ namespace WebLibrary.Migrations
             PasswordHash = "$FORMALHASH$f162679c5ae102e642851b5ba0fb5839a026cc321388e1b5"
         };
 
-        public override void Down()
-        {
-            foreach (var book in books)
-            {
-                Delete.FromTable("Book").Row(book);
-            }
-
-            Delete.FromTable("User").Row(user);
-        }
-
         public override void Up()
         {
             foreach (var book in books)
@@ -61,5 +51,15 @@ namespace WebLibrary.Migrations
 
             Insert.IntoTable("User").Row(user);
         }
+
+        public override void Down()
+        {
+            foreach (var book in books)
+            {
+                Delete.FromTable("Book").Row(book);
+            }
+
+            Delete.FromTable("User").Row(user);
+        } 
     }
 }

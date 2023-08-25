@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using WebLibrary.BLL.Resources;
 using System.Security.Cryptography;
+using WebLibrary.BLL.Exceptions;
 
 namespace WebLibrary.BLL.Extensions
 {
@@ -44,12 +45,14 @@ namespace WebLibrary.BLL.Extensions
 
         public static bool IsHashSupported(string hash)
         {
-            return hash.Equals("$FORMALHASH$");
+            var isValid = hash.Equals("$FORMALHASH$");
+
+            return isValid;
         }
 
         public static bool IsHashVerified(string password, string hashedPassword)
         {
-            if (!IsHashSupported(hashedPassword))
+            if(IsHashSupported(hashedPassword)!)
             {
                 throw new NotSupportedException(HashExceptionMessages.HashIsNotSupported);
             }

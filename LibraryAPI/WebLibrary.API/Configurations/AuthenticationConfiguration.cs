@@ -11,11 +11,11 @@ namespace WebLibrary.API.Configurations
         {
             var authConfigSection = configuration.GetSection("Auth");
 
-            var authenticationSettings = new AuthenticationSettings();
-            configuration.Bind(nameof(authenticationSettings), authenticationSettings);
-            services.AddSingleton(authenticationSettings);
+            var authSettings = new AuthSettings();
+            configuration.Bind(nameof(authSettings), authSettings);
+            services.AddSingleton(authSettings);
 
-            services.Configure<AuthenticationSettings>(authConfigSection);
+            services.Configure<AuthSettings>(authConfigSection);
 
             services
                 .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -24,13 +24,12 @@ namespace WebLibrary.API.Configurations
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authenticationSettings.Secret)),
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authSettings.Secret)),
                         ValidateIssuer = false,
                         ValidateAudience = false,
                         ValidateLifetime = true
                     };
                 });
-
             services.AddAuthorization();
 
             return services;

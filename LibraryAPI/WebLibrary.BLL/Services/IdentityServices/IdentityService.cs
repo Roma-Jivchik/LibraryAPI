@@ -16,12 +16,12 @@ namespace WebLibrary.BLL.Services.IdentityServices
     internal class IdentityService : IIdentityService
     {
         private readonly IUserRepository _userRepository;
-        private readonly AuthenticationSettings _authorizationSettings;
+        private readonly AuthSettings _authSettings;
 
-        public IdentityService(IUserRepository userRepository, AuthenticationSettings authorizationSettings)
+        public IdentityService(IUserRepository userRepository, AuthSettings authSettings)
         {
             _userRepository = userRepository;
-            _authorizationSettings = authorizationSettings;
+            _authSettings = authSettings;
         }
 
         public async Task<AuthenticationResult> LoginAsync(LoginRequest request)
@@ -30,14 +30,14 @@ namespace WebLibrary.BLL.Services.IdentityServices
 
             if (user is null)
             {
-                return new AuthenticationResult(LoginExceptionMessages.UserNotExist);
+                return new AuthenticationResult(new List<string> { LoginExceptionMessages.UserNotExist });
             }
 
             var userHasValidPassword = PasswordHasher.IsHashVerified(request.Password, user.PasswordHash);
 
             if (!userHasValidPassword)
             {
-                return new AuthenticationResult(LoginExceptionMessages.InvalidPassword);
+                return new AuthenticationResult(new List<string> { LoginExceptionMessages.InvalidPassword });
             }
 
             return GenerateAuthenticationResultForUser(user);
@@ -49,7 +49,7 @@ namespace WebLibrary.BLL.Services.IdentityServices
 
             if (existingUser is not null)
             {
-                return new AuthenticationResult(RegistrationExceptionMessages.UserAlreadyExists);
+                return new AuthenticationResult(new List<string> { RegistrationExceptionMessages.UserAlreadyExists });
             }
 
             var passwordHash = PasswordHasher.Hash(request.Password);
@@ -66,21 +66,21 @@ namespace WebLibrary.BLL.Services.IdentityServices
         {
             var tokenHandler = new JwtSecurityTokenHandler();
 
-            var key = Encoding.ASCII.GetBytes(_authorizationSettings.Secret);
+            var key = Encoding.UTF8.GetBytes(_authSettings.Secret);
 
             var claims = new List<Claim>
-            {
+        {
             new(JwtRegisteredClaimNames.Sub, user.Login),
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             new(JwtRegisteredClaimNames.Email, user.Login),
             new("Id", user.Id.ToString()),
-            };
+        };
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
                 IssuedAt = DateTime.UtcNow,
-                Expires = DateTime.UtcNow.Add(_authorizationSettings.TokenLifetime),
+                Expires = DateTime.UtcNow.Add(_authSettings.TokenLifetime),
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(key),
                     SecurityAlgorithms.HmacSha256Signature

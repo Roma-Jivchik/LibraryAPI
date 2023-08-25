@@ -1,6 +1,6 @@
 ﻿namespace WebLibrary.Domain.Settings
 {
-    public class AuthenticationSettings
+    public class AuthSettings
     {
         public string Secret { get; set; } = null!;
 
