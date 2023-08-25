@@ -10,7 +10,7 @@ namespace WebLibrary.DAL
 {
     public static class DI
     {
-        public static void AddDLL(this IServiceCollection serviceCollection, string connectionString)
+        public static void AddDAL(this IServiceCollection serviceCollection, string connectionString)
         {
             serviceCollection.AddDbContext<LibraryDBContext>(options => options.UseSqlServer(connectionString));
 

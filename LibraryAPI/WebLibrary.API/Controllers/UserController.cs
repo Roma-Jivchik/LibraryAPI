@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebLibrary.Domain.Entities;
-using WebLibrary.BLL.Services.UserServices;
 using Microsoft.AspNetCore.Authorization;
+using WebLibrary.BLL.Services.UserServices;
 using WebLibrary.Domain.Requests.UserRequests;
 
 namespace WebLibrary.API.Controllers
